@@ -1,0 +1,137 @@
+.topbar {
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   font-family: 'Josefin Sans', sans-serif;
+   background-color: #fff;
+   position: relative;
+   z-index: 1;
+}
+
+.topbar .wrapper {
+   width: 100%;
+   max-width: 1366px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+}
+
+.topbar .left h3 {
+   margin: 0;
+}
+
+.topbar .left h3 a {
+   text-decoration: none;
+   color: black;
+}
+
+.topbar .center {
+   display: flex;
+   gap: 20px;
+}
+
+.topbar .center a {
+   text-decoration: none;
+   color: black;
+}
+
+.topbar .right {
+   display: flex;
+   align-items: center;
+}
+
+.topbar .right span img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+
+.topbar .right .searchEngine {
+   display: flex;
+   align-items: center;
+   position: relative;
+}
+
+.topbar .right .searchEngine input {
+   height: 25px;
+   border-radius: 3px;
+   padding: 0 10px;
+   border: 1px solid #ccc;
+   opacity: 0;
+   transition: all 0.5s ease;
+}
+
+.topbar .right .searchEngine .fa-search {
+   background-color: orange;
+   width: 30px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   cursor: pointer;
+}
+
+.topbar .right .searchEngine.active input {
+   opacity: 1;
+}
+
+.menu-toggle {
+   display: none;
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+   .topbar {
+       height: auto;
+   }
+
+   .topbar .center {
+       display: none;
+       flex-direction: column;
+       width: 200px; /* Genişliği belirliyoruz */
+       gap: 0;
+       align-items: center;
+       position: absolute;
+       top: 50px;
+       right: 0; /* Sağ tarafa hizalıyoruz */
+       background-color: #fff;
+       border-left: 1px solid #ccc; /* Sağda çizgi efekti */
+       z-index: 2;
+   }
+
+   .topbar .center a {
+       padding: 10px 0;
+       width: 100%;
+       text-align: center;
+   }
+
+   .menu-toggle {
+       display: block;
+   }
+
+   .topbar .center.active {
+       display: flex;
+   }
+}
+
+@media only screen and (max-width: 480px) {
+   .topbar .right span img {
+       width: 30px;
+       height: 30px;
+   }
+
+   .topbar .right .searchEngine .fa-search {
+       width: 25px;
+       height: 25px;
+   }
+
+   .topbar .right .searchEngine input {
+       height: 20px;
+       padding: 0 8px;
+   }
+}

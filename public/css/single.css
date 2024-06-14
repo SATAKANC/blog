@@ -1,0 +1,92 @@
+.single {
+   width: 95%; /* Ekranın %95'ine sığacak şekilde ayarlandı */
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 50px;
+}
+
+.single .wrapper {
+   width: 100%; /* Yine de %100 genişlikte olacak, ancak .single sınıfı ile orantılı olarak küçülecek */
+   max-width: 900px; /* Maksimum genişlik ayarlandı */
+   padding: 20px;
+   border: 2px solid #ddd; /* Kenarlık eklendi */
+   border-radius: 10px;
+   background-color: #f9f9f9; /* Arka plan rengi değiştirildi */
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Gölgelendirme eklendi */
+}
+
+
+.singleHeader {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 80px; /* Başlık alanı boyutu azaltıldı */
+   padding: 0 20px; /* Yatay boşluk eklendi */
+}
+
+.singleHeader h2 {
+   font-family: 'Pacifico', cursive;
+   font-size: 24px; /* Başlık font boyutu azaltıldı */
+   margin: 0; /* Başlık boşluğu eklendi */
+}
+
+.singleHeader .buttons button {
+   width: 40px; /* Buton boyutu artırıldı */
+   height: 40px; /* Buton boyutu artırıldı */
+   border-radius: 50%;
+   border: none;
+   font-size: 18px; /* Buton font boyutu artırıldı */
+   cursor: pointer; /* İmleç değiştirildi */
+   transition: background-color 0.3s ease; /* Düzenleme: Animasyon eklendi */
+}
+
+.singleHeader .buttons button:first-child {
+   background-color: orange;
+}
+
+.singleHeader .buttons button:last-child {
+   background-color: rgb(184, 44, 29);
+   margin-left: 20px;
+}
+
+/* Butonlara hover efekti eklendi */
+.singleHeader .buttons button:hover {
+   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.single img {
+   border-radius: 10px;
+   max-width: 100%; /* Görsel maksimum genişlik eklendi */
+   max-height: 400px; /* Görsel maksimum yükseklik eklendi */
+   object-fit: cover;
+   margin-bottom: 10px;
+}
+
+.single p::first-letter {
+   margin-left: 20px;
+   font-size: 120%; /* Baş harf büyüklüğü artırıldı */
+   font-weight: bold; /* Baş harf kalınlaştırıldı */
+   color: #333; /* Baş harf rengi belirlendi */
+}
+
+.singleFooter {
+   width: 100%;
+   margin-top: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.singleFooter span:first-child {
+   font-family: 'Dancing Script', cursive;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+.singleFooter span:last-child {
+   font-family: 'Ubuntu Mono', monospace;
+   font-size: 18px;
+   font-weight: 700;
+}

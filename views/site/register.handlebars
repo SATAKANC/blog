@@ -1,0 +1,73 @@
+<div class="logReg">
+   <img src="/images/background/arkaa.jpeg" alt="register">
+   <form id="register">
+      <div class="formGroup">
+         <input name="email" type="text" required>
+         <span>email*</span>
+      </div>
+
+      <div class="formGroup">
+         <input name="username" type="text" required>
+         <span>username*</span>
+      </div>
+
+      <div class="formGroup">
+         <input name="password" type="text" required>
+         <span>password *</span>
+      </div>
+
+      <div class="btnGroup">
+         <a href="/login">Hesabınız Var Mı?</a>
+         <button type="submit">Register</button>
+      </div>
+   </form>
+   <div class="message">
+      <p id="registerMessage"></p>
+   </div>
+
+
+</div>
+
+<script>
+   const register = document.getElementById('register')
+   const registerMessage = document.getElementById('registerMessage')
+
+   const clearMessageForRegister = () => {
+      setTimeout(() => {
+         registerMessage.innerHTML = ''
+
+      }, 1000 * 3)
+   }
+
+   register.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      const formData = new FormData(e.target)
+
+
+      fetch('/register', {
+         method: 'post',
+         body: formData
+      }).then(response => response.json()).then(res => {
+
+         if (res.case) {
+            registerMessage.style.color = 'blue';
+            registerMessage.innerHTML = res.message
+            setTimeout(() => {
+               window.location.href = '/index'
+
+            }, 1000 * 1)
+
+
+         }
+         else {
+
+            registerMessage.style.color = 'red';
+            registerMessage.innerHTML = res.message
+            clearMessageForRegister()
+
+
+         }
+      })
+   })
+</script>
